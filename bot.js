@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/;botRegexTeam = /^\/teams/;
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
@@ -92,7 +92,7 @@ function respond() {
   }
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/document/d/1hSuEG7oplnx4IX6HGsMOjsWb9TCqC4-F1NLjuBz5PCM/edit");
+    postMessage("https://docs.google.com/document/d/1-YSfwi63gzuuDivdY4qhYzEnHe6fv8aIVLmN9z5M3FI/edit?usp=sharing");
     this.res.end();
   } 
   else if(request.text && botRegexGTA.test(request.text)) {
@@ -171,7 +171,11 @@ function respond() {
       postMessage(siege2);
     this.res.end();
   }
-  
+  else if(request.text && botTEAM.test(request.text)) {
+this.res.writeHead(200);
+postMessage("https://docs.google.com/spreadsheets/d/1VzNC68Wq87E7xw-fIhgebMqBLEHgGEiRcEtxfhiMxs8/edit?usp=sharing");
+this.res.end();
+}
   else {
     console.log("don't care");
     this.res.writeHead(200);

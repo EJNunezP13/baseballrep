@@ -171,11 +171,11 @@ function respond() {
       postMessage(siege2);
     this.res.end();
   }
-  else if(request.text && botTEAM.test(request.text)) {
-this.res.writeHead(200);
-postMessage("https://docs.google.com/spreadsheets/d/1VzNC68Wq87E7xw-fIhgebMqBLEHgGEiRcEtxfhiMxs8/edit?usp=sharing");
-this.res.end();
-}
+  else if(request.text && botRegexTeam.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://docs.google.com/spreadsheets/d/1VzNC68Wq87E7xw-fIhgebMqBLEHgGEiRcEtxfhiMxs8/edit?usp=sharing");
+    this.res.end();
+  } 
   else {
     console.log("don't care");
     this.res.writeHead(200);
